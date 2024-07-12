@@ -1,5 +1,3 @@
-# Chirped Server
-
 ## Project Overview
 
 Chirped Server is an internal social networking system inspired by Twitter, designed for organizational use. This platform enables users within an organization to connect, share updates, and interact in a structured and engaging way.
