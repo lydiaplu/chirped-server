@@ -25,7 +25,8 @@ public class TweetController {
     public ResponseEntity<Tweet> addTweet(
             @RequestParam Integer userId,
             @RequestParam String content,
-            @RequestParam(required = false) MultipartFile[] images) {
+            @RequestParam(required = false) MultipartFile[] images
+    ) {
         try {
             Tweet tweet = tweetService.addTweet(userId, content, images);
             return ResponseEntity.ok(tweet);
@@ -64,6 +65,7 @@ public class TweetController {
         Pageable pageable = PageRequest.of(page, size);
         Page<Tweet> tweets = tweetService.findLatestTweetsByUserAndFollowers(userId,lastSeenTimestamp, pageable);
 
+        ResponseEntity<Page<Tweet>> response = ResponseEntity.ok(tweets);
         return ResponseEntity.ok(tweets);
     }
 
